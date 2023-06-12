@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-lightGrayCyan">
+  <header class="pt-12">
+    <img src="images/logo.svg" alt="logo" class="mx-auto">
+  </header>
+  <main class="flex items-center justify-center flex-col">
+  
+  <!-- calculator container -->
+  <section class="mx-6 rounded-xl my-9 px-8 py-8 w-full md:max-w-[850px] bg-white flex flex-col md:flex-row md:gap-9">
+      <!-- calculation -->
+      <div class="flex flex-col w-full md:w-1/2 mx-auto">
+          <!-- bill contanier -->
+          <div class="flex flex-col relative">
+            <label for="bill" class="text-darkCyan text-xl mb-2">Bill</label>
+            <input type="number" min="0" id="bill" step="0.01" class="input-lg" placeholder="0">
+            <img src="images/icon-dollar.svg" alt="" class="icon">
+          </div>
+          <!-- tip container -->
+          <div class="flex flex-col my-8 w-full">
+            <!-- button -->
+            <p class="text-darkCyan text-xl mb-4">Select Tip %</p>
+            <div class="flex flex-wrap md:justify-between text-2xl gap-3 tipContainer">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <input type="number" step="1" placeholder="Custom"  class="selected bg-lightercyan px-2 focus:outline-1 outline-strongCyan text-xl py-2 w-36 md:w-28 rounded-lg text-right" id="custom" min="0">
+          </div>
+          </div>
+          <!-- total people -->
+          <div class="flex flex-col my-6 relative">
+            <label for="people" class="text-darkCyan text-xl mb-2">Number of People</label>
+            <span class="error"></span>
+            <input type="number" id="people" min="1" step="1" class="input-lg" placeholder="0" >
+            <img src="images/icon-person.svg" alt="" class="icon">
+          </div>
+      </div>
+     <!-- result -->
+     <div class="px-5 md:px-8 py-14 flex flex-col gap-14  bg-darkCyan md:w-1/2 rounded-xl">
+      <!-- tip amount result-->
+      <div class="tip">
+        <h4 class="text-white">Tip Amount <span class="block text-darkGrayCyan text-sm">/ person</span></h4>
+        <p class="text-5xl text-strongCyan">$<span id="tipAmount">0.00</span></p>
+      </div> 
+      <div class="tip">
+        <h4 class="text-white">Total <span class="block text-darkGrayCyan text-sm">/ person</span></h4>
+        <p class="text-5xl text-strongCyan">$<span id="total">0.00</span></p>
+      </div>
+      <button class="bg-strongCyan px-10 py-[0.6rem] uppercase rounded-md text-darkCyan w-full  md:mt-32" id="reset">Reset</button>
+     </div>
+  </section>
+  </main>
+  <footer class="text-center mt-10">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">SG</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

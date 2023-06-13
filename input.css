@@ -9,7 +9,7 @@
     text-align: center;
 }
 .btn{
-    @apply px-4  py-2 bg-darkCyan text-white w-36 md:w-28 rounded-lg text-center;
+    @apply px-4  py-2 bg-darkCyan text-white w-36 md:w-28 rounded-lg text-center hover:bg-strongCyan;
 }
 .tip{
     @apply flex justify-between items-center gap-2;
@@ -21,7 +21,7 @@
     @apply absolute h-6 w-6 inset-y-0 start-0 top-[3.2rem] left-4;
 }
 .error{
-    @apply absolute right-0 text-red-500 hidden  w-44 text-sm; 
+    @apply absolute right-0 text-red-500 hidden  w-48 top-1 text-sm text-right; 
 }
 .btn.active{
     @apply bg-strongCyan;
@@ -31,4 +31,15 @@
 }
 .error.show ~ input{
     @apply outline-red-500;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

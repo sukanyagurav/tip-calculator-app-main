@@ -658,11 +658,6 @@ video {
   background-color: hsl(189 41% 97% / var(--tw-bg-opacity));
 }
 
-.bg-strongCyan {
-  --tw-bg-opacity: 1;
-  background-color: hsl(172 67% 45% / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
@@ -768,6 +763,18 @@ video {
   outline-color: hsl(172, 67%, 45%);
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
 #custom::-webkit-input-placeholder {
   text-align: center;
 }
@@ -788,6 +795,11 @@ video {
   text-align: center;
   --tw-text-opacity: 1;
   color: hsl(0 0% 100% / var(--tw-text-opacity));
+}
+
+.btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(172 67% 45% / var(--tw-bg-opacity));
 }
 
 @media (min-width: 658px) {
@@ -839,8 +851,10 @@ video {
 .error {
   position: absolute;
   right: 0px;
+  top: 0.25rem;
   display: none;
-  width: 11rem;
+  width: 12rem;
+  text-align: right;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
@@ -860,6 +874,25 @@ video {
   outline-color: #ef4444;
 }
 
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.hover\:bg-strongCyan:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(172 67% 45% / var(--tw-bg-opacity));
+}
+
 .focus\:outline-1:focus {
   outline-width: 1px;
 }
@@ -877,8 +910,8 @@ video {
     width: 7rem;
   }
 
-  .md\:max-w-\[850px\] {
-    max-width: 850px;
+  .md\:max-w-\[880px\] {
+    max-width: 880px;
   }
 
   .md\:flex-row {

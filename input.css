@@ -17,11 +17,8 @@
 .input-lg{
     @apply bg-lightercyan px-4 py-2 rounded-lg border-gray-200 focus:outline-1 outline-strongCyan text-right text-darkCyan text-4xl;
 }
-.icon{
-    @apply absolute h-6 w-6 inset-y-0 start-0 top-[3.2rem] left-4;
-}
 .error{
-    @apply absolute right-0 text-red-500 hidden  w-48 top-1 text-sm text-right; 
+    @apply absolute top-7 right-0 text-red-500 hidden  w-48 md:top-1 text-sm text-right; 
 }
 .btn.active{
     @apply bg-strongCyan;

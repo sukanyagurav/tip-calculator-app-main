@@ -550,8 +550,37 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.inset-y-0 {
+  top: 0px;
+  bottom: 0px;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.start-0 {
+  inset-inline-start: 0px;
+}
+
+.top-\[3\.2rem\] {
+  top: 3.2rem;
+}
+
+.top-\[4\.3rem\] {
+  top: 4.3rem;
+}
+
+.left-4 {
+  left: 1rem;
 }
 
 .mx-6 {
@@ -587,6 +616,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -599,8 +632,16 @@ video {
   display: flex;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-36 {
   width: 9rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-full {
@@ -837,21 +878,10 @@ video {
   outline-width: 1px;
 }
 
-.icon {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  inset-inline-start: 0px;
-  top: 3.2rem;
-  left: 1rem;
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
 .error {
   position: absolute;
+  top: 1.75rem;
   right: 0px;
-  top: 0.25rem;
   display: none;
   width: 12rem;
   text-align: right;
@@ -859,6 +889,12 @@ video {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+@media (min-width: 658px) {
+  .error {
+    top: 0.25rem;
+  }
 }
 
 .btn.active {
@@ -898,6 +934,14 @@ input[type=number] {
 }
 
 @media (min-width: 658px) {
+  .md\:top-\[3\.2rem\] {
+    top: 3.2rem;
+  }
+
+  .md\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .md\:mt-32 {
     margin-top: 8rem;
   }

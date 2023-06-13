@@ -18,7 +18,7 @@ function checkPeople(value ){
         return false
     }
     else if(value < 0){
-        errorMsg.innerHTML="Must be greater than 0"
+        errorMsg.innerHTML="Oops! wrong value"
         errorMsg.classList.add('show')
         return false
     }

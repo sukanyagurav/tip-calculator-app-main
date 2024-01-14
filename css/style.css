@@ -563,8 +563,8 @@ video {
   bottom: 0px;
 }
 
-.left-3 {
-  left: 0.75rem;
+.left-\[1\.25rem\] {
+  left: 1.25rem;
 }
 
 .start-0 {
@@ -579,8 +579,8 @@ video {
   top: 4.3rem;
 }
 
-.left-4 {
-  left: 1rem;
+.left-\[1\.2rem\] {
+  left: 1.2rem;
 }
 
 .mx-6 {
@@ -857,15 +857,16 @@ video {
 }
 
 .input-lg {
+  position: relative;
   border-radius: 0.5rem;
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: hsl(189 41% 97% / var(--tw-bg-opacity));
-  padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 3.4rem;
   text-align: right;
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -908,6 +909,10 @@ video {
 
 .error.show ~ input {
   outline-color: #ef4444;
+}
+
+.small-text{
+  font-size: 1rem;
 }
 
 /* Chrome, Safari, Edge, Opera */

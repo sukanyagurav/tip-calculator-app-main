@@ -25,8 +25,8 @@
           <!-- bill contanier -->
           <div class="flex flex-col relative">
             <label for="bill" class="text-darkCyan text-xl mb-2">Bill</label>
-            <input type="number" min="0" id="bill" step="0.01" class="input-lg" placeholder="0">
-            <img src="images/icon-dollar.svg" alt="" class="absolute h-6 w-6 inset-y-0 start-0  left-4 top-[3.2rem]">
+            <input type="tel" min="0" id="bill" step="0.01" class="input-lg" placeholder="0">
+            <img src="images/icon-dollar.svg" alt="" class="absolute h-6 w-6 inset-y-0 start-0  left-[1.2rem] top-[3.2rem]" aria-hidden="true">
           </div>
           <!-- tip container -->
           <div class="flex flex-col my-8 w-full">
@@ -38,15 +38,15 @@
             <button class="btn">15%</button>
             <button class="btn">25%</button>
             <button class="btn">50%</button>
-            <input type="number" step="1" placeholder="Custom"  class="selected bg-lightercyan px-2 focus:outline-1 outline-strongCyan text-xl py-2 w-36 md:w-28 rounded-lg text-right" id="custom" min="0">
+            <input type="tel" step="1" placeholder="Custom"  class="selected bg-lightercyan px-2 focus:outline-1 outline-strongCyan text-xl py-2 w-36 md:w-28 rounded-lg text-right" id="custom" min="0">
           </div>
           </div>
           <!-- total people -->
           <div class="flex flex-col my-6 relative">
             <label for="people" class="text-darkCyan mb-6 text-xl md:mb-2">Number of People</label>
             <span class="error"></span>
-            <input type="number" id="people" min="1" step="1" class="input-lg" placeholder="0" >
-            <img src="images/icon-person.svg" alt="" class="absolute h-6 w-6 inset-y-0 start-0  left-4  top-[4.3rem] md:top-[3.2rem]">
+            <input type="tel" id="people"  class="input-lg" placeholder="0" >
+            <img src="images/icon-person.svg" alt="" class="absolute h-6 w-6 inset-y-0 start-0  left-[1.2rem]  top-[4.3rem] md:top-[3.2rem]">
           </div>
       </div>
      <!-- result -->
@@ -54,11 +54,11 @@
       <!-- tip amount result-->
       <div class="tip">
         <h4 class="text-white">Tip Amount <span class="block text-darkGrayCyan text-sm">/ person</span></h4>
-        <p class="text-5xl text-strongCyan">$<span id="tipAmount">0.00</span></p>
+        <p class="text-5xl text-strongCyan flex items-center">$<span id="tipAmount">0.00</span></p>
       </div> 
       <div class="tip">
         <h4 class="text-white">Total <span class="block text-darkGrayCyan text-sm">/ person</span></h4>
-        <p class="text-5xl text-strongCyan">$<span id="total">0.00</span></p>
+        <p class="text-5xl text-strongCyan flex items-center">$<span id="total">0.00</span></p>
       </div>
       <button class="bg-lightGrayCyan transition duration-150 hover:bg-strongCyan px-10 py-[0.6rem] uppercase rounded-md text-darkCyan w-full  md:mt-32" id="reset">Reset</button>
      </div>

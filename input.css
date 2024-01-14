@@ -15,7 +15,7 @@
     @apply flex justify-between items-center gap-2;
 }
 .input-lg{
-    @apply bg-lightercyan px-4 py-2 rounded-lg border-gray-200 focus:outline-1 outline-strongCyan text-right text-darkCyan text-4xl;
+    @apply relative bg-lightercyan px-4 pl-[3.4rem] py-2 rounded-lg border-gray-200 focus:outline-1 outline-strongCyan text-right text-darkCyan text-4xl;
 }
 .error{
     @apply absolute top-7 right-0 text-red-500 hidden  w-48 md:top-1 text-sm text-right; 
@@ -28,6 +28,9 @@
 }
 .error.show ~ input{
     @apply outline-red-500;
+}
+.small-text{
+    font-size: 1rem;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

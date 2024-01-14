@@ -10,6 +10,10 @@ let selectedTip;
 let totalPeople;
 let currentBill;
 const resetBtn = document.querySelector('#reset');
+
+
+
+const getStringWithNumbersOnly = (str) => [...str].filter((v) => Number.isInteger(+v) && v !== ' ').join('');
 //check number of people
 function checkPeople(value ){
     if(value === 0 ){
@@ -27,36 +31,43 @@ function checkPeople(value ){
         return true
     }
 }
-numberOfPeople.addEventListener('change',(e)=>{
-    totalPeople = +e.target.value
+numberOfPeople.addEventListener('input',(e)=>{
+    numberOfPeople.value=getStringWithNumbersOnly(e.target.value)
+    totalPeople = +numberOfPeople.value
     checkPeople(totalPeople) && calculate(currentBill,selectedTip,totalPeople)
 })
-customTip.addEventListener('change',function(e){
-    selectedTip=+e.target.value
-})
-tipContainer.addEventListener('click',function(e){
-    if(e.target.classList.contains('btn')){
-        // check if selected input is button or not
-        customTip.value=''
-        allTip.forEach(tip=>{
-            if(tip !== e.target){
-             tip.classList.remove('active')
-            }
-        })
-        e.target.classList.add('active')
-        selectedTip=+e.target.innerHTML.slice(0, -1)
-    }
-    else if(e.target.classList.contains('selected')){
-        allTip.forEach(tip=>{
-            tip.classList.remove('active')
-        })
-        selectedTip=+e.target.value
-    }
-    calculate(currentBill,selectedTip,totalPeople)
+
+const evn = ['click','input']
+evn.forEach((evn)=>{
+
+    tipContainer.addEventListener(evn,function(e){
+        if(e.target.classList.contains('btn')){
+            // check if selected input is button or not
+            customTip.value=''
+            allTip.forEach(tip=>{
+                if(tip !== e.target){
+                 tip.classList.remove('active')
+                }
+            })
+            e.target.classList.add('active')
+            selectedTip=+e.target.innerHTML.slice(0, -1)
+           
+        }
+        else if(e.target.classList.contains('selected')){
+            customTip.value=getStringWithNumbersOnly(e.target.value)
+            selectedTip=+customTip.value
+            allTip.forEach(tip=>{
+                tip.classList.remove('active')
+            })
+    
+        }
+        calculate(currentBill,selectedTip,totalPeople)
+    })
 })
 
-bill.addEventListener('change',function(e){
-    currentBill=parseFloat(e.target.value);
+bill.addEventListener('input',function(e){
+    bill.value = getStringWithNumbersOnly(e.target.value)
+    currentBill=parseFloat(bill.value);
     calculate(currentBill,selectedTip,totalPeople)
 })
 
@@ -66,7 +77,20 @@ function calculate(currentBill,selectedTip,totalPeople){
         const subTotal = parseFloat(currentBill + tipInDollars)
         const total = subTotal / totalPeople;
         const tipPerPerson = tipInDollars / totalPeople;
-        labelTip.innerHTML = tipPerPerson.toFixed(2);
+        if(tipPerPerson.toFixed(2).toString().length >=8){
+          
+            labelTip.parentElement.classList.add('small-text')
+           
+        }else{
+            labelTip.parentElement.classList.remove('small-text')
+        }
+        if(total.toFixed(2).toString().length >=8){
+            labelTotal.parentElement.classList.add('small-text')
+           
+        }else{
+            labelTotal.parentElement.classList.remove('small-text')
+        }
+        labelTip.innerHTML = tipPerPerson.toFixed(2)
         labelTotal.innerHTML = total.toFixed(2);
     }
     else{
@@ -84,4 +108,12 @@ resetBtn.addEventListener('click',function(){
     numberOfPeople.value='';
     bill.value=''
     customTip.value=''
+    if(labelTotal.parentElement.classList.contains('small-text')){
+
+        labelTotal.parentElement.classList.remove('small-text')
+    }
+    if(labelTip.parentElement.classList.contains('small-text')){
+
+        labelTip.parentElement.classList.remove('small-text')
+    }
 })
